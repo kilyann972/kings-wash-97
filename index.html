@@ -94,7 +94,8 @@
     .site-header {position:sticky;top:0;z-index:80;background:rgba(255,255,255,.975);border-bottom:1px solid #E8EDF3;box-shadow:0 4px 28px rgba(22,42,63,.055)}
     .header-inner {display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:76px}
     .brand {display:inline-flex;align-items:center;gap:10px;flex-shrink:0;min-height:48px}
-    .brand-mark {width:43px;height:43px;border-radius:12px;background:linear-gradient(135deg,#0865B7,#1685DD);color:white;display:grid;place-items:center;font-family:var(--heading);font-weight:900;font-size:26px;letter-spacing:-.12em;padding-right:4px;transform:skew(-5deg)}
+    .brand-mark {width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#0F1820,#0865B7 60%,#1685DD);color:white;display:grid;place-items:center;overflow:hidden;padding:6px;box-shadow:0 8px 20px rgba(8,101,183,.22)}
+    .brand-mark img {width:100%;height:100%;object-fit:contain}
     .brand-name {font-family:var(--heading);font-weight:900;letter-spacing:-.055em;font-size:19px;line-height:1}
     .brand-name small {display:block;font:700 9px/1.2 var(--body);text-transform:uppercase;letter-spacing:.19em;color:var(--muted);margin-top:5px}
     .nav-links {display:none;align-items:center;gap:20px;font-size:13px;font-weight:750}
@@ -271,10 +272,43 @@
     .floating-cta {position:fixed;z-index:99;bottom:max(13px,env(safe-area-inset-bottom));left:14px;right:14px;box-shadow:0 12px 34px #0004;min-height:57px;border-radius:15px}
     .toast {position:fixed;z-index:120;left:18px;right:18px;bottom:90px;max-width:450px;margin-inline:auto;display:none;background:#fff;color:#24272B;padding:16px 18px;border:1px solid #A9C4DC;border-radius:14px;box-shadow:0 20px 55px #0003;font-size:14px;font-weight:700}
     .toast.show {display:block}
-    .js .reveal {opacity:0;transform:translateY(18px);transition:opacity .48s ease,transform .48s ease}
+    .js .reveal {opacity:1;transform:none;transition:opacity .48s ease,transform .48s ease}
     .js .reveal.is-visible {opacity:1;transform:none}
     /* Mobile-first : tous les textes de lecture et commandes restent à 16 px minimum.
        Les micro-étiquettes purement décoratives conservent leur hiérarchie visuelle. */
+
+    .hero-brand-logo {width:250px;max-width:80%;height:auto;object-fit:contain;margin:0 0 18px;padding:8px 13px;background:#fff;border-radius:15px}
+    .header-logo {display:block;width:190px;max-width:min(42vw,190px);height:auto;object-fit:contain;background:#fff;padding:6px 10px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+    body::before {content:"";position:fixed;inset:0;z-index:-1;background-image:url("assets/logo-monogramme.png");background-repeat:no-repeat;background-position:center 180px;background-size:min(92vw,860px);opacity:.045;pointer-events:none} 
+    .brand-mark {background:transparent;transform:none;padding:0;border-radius:8px;overflow:hidden}
+    .brand-mark img {width:100%;height:100%;object-fit:contain}
+    .footer-logo {background:#fff;padding:8px;border-radius:14px}
+    .media-grid,.video-grid {display:grid;gap:20px}
+    .media-card {background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+    .media-frame {aspect-ratio:9/16;background:#E8EEF4}
+    .media-frame img,.media-frame video {width:100%;height:100%;object-fit:cover}
+    .media-body {padding:18px 18px 20px}
+    .media-body p {margin:0;color:var(--muted);font-size:14px}
+    .media-kicker {display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:850;color:var(--blue);margin:0 0 10px}
+    .video-card {background:var(--ink);color:#fff;border-radius:24px;padding:16px;box-shadow:0 18px 50px rgba(22,42,63,.12)}
+    .video-card h3 {margin-top:0}
+    .video-card p {color:#D8E8F4;font-size:14px}
+    .video-card video {display:block;width:100%;aspect-ratio:9/16;border-radius:18px;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.24)}
+    .video-meta {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+    .video-badge {display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:13px;font-weight:750}
+    .flyer-note {text-align:center;margin:14px 0 0;color:var(--muted);font-size:13px}
+    .footer-logo {max-width:260px;height:auto;object-fit:contain;margin-bottom:16px}
+    .hero-deco-monogram {position:absolute;right:-14px;bottom:-30px;width:150px;opacity:.22;filter:drop-shadow(0 24px 30px rgba(0,0,0,.18));pointer-events:none;transform:rotate(-10deg)}
+    .video-grid {grid-template-columns:1fr}
+    .video-card {display:flex;flex-direction:column}
+    .video-card video {aspect-ratio:9/16}
+    .video-card.monogram-card {position:relative;justify-content:center;min-height:100%;overflow:hidden;background:linear-gradient(145deg,#0D1217,#123D65 72%,#1685DD)}
+    .video-card.monogram-card::before {content:"";position:absolute;inset:auto -90px -100px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(236,102,157,.28),transparent 62%)}
+    .monogram-visual {display:grid;place-items:center;min-height:380px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+    .monogram-visual img {max-width:82%;max-height:320px;object-fit:contain;filter:drop-shadow(0 18px 28px rgba(0,0,0,.32))}
+    .monogram-card p {color:#DDEFFF}
+    .monogram-card .video-badge {background:rgba(255,255,255,.16)}
+
     @media (max-width:799px) {
       .btn,.intro,.hero-proof,.trust-item,.price-card .short,.price-prefix,
       .price-unit,.checked-list li,.pricing-footnote,.extra-item small,
@@ -293,6 +327,7 @@
       .brand-name {font-size:16px}
       .brand-name small {font-size:8px;letter-spacing:.13em}
       .header-cta {padding:9px 7px;gap:6px;font-size:13px}
+      .header-logo {max-width:140px;padding:5px 8px}
     }
     @media (min-width:540px) {
       .container {width:min(1120px,calc(100% - 54px))}
@@ -324,6 +359,7 @@
       .price-card.featured {padding:34px}
       .extra-list {grid-template-columns:1fr}
       .service-grid,.location-box,.book-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+      .video-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
       .steps-grid,.review-grid {grid-template-columns:repeat(3,minmax(0,1fr))}
       .location-box {padding:36px;gap:45px}
       .location-panel {min-height:295px}
@@ -334,6 +370,7 @@
       .toast {left:auto;right:22px;bottom:94px}
     }
     @media (min-width:1020px) {
+      .video-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
       .nav-links {gap:26px;font-size:14px}
       .hero-visual {min-height:430px}
       .hero-panels {height:380px}
@@ -363,11 +400,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#accueil" aria-label="King's Wash 97, retour à l'accueil">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        <span class="brand-name">King's Wash <span style="color:var(--blue)">97</span><small>Nettoyage mobile</small></span>
+        <img class="header-logo" src="assets/logo-complet.png" alt="Logo King's Wash 97">
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
-        <a href="#offres">Offres</a><a href="#prestations">Prestations</a><a href="#comment">Comment ça marche</a><a href="#faq">FAQ</a>
+        <a href="#offres">Offres</a><a href="#videos">Réalisations</a><a href="#prestations">Prestations</a><a href="#faq">FAQ</a>
       </nav>
       <a class="btn btn-primary header-cta js-wa" href="#reservation" data-whatsapp="general" aria-label="Réserver sur WhatsApp">
         <svg class="whatsapp-icon" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -375,15 +411,16 @@
       </a>
     </div>
     <nav class="container mobile-nav" aria-label="Navigation mobile">
-      <a href="#offres">Offres & tarifs</a><a href="#prestations">Prestations</a><a href="#comment">Comment ça marche</a><a href="#faq">FAQ</a>
+      <a href="#offres">Offres & tarifs</a><a href="#videos">Réalisations</a><a href="#prestations">Prestations</a><a href="#faq">FAQ</a>
     </nav>
   </header>
 
   <main id="contenu">
-    <!-- HERO : remplacer les zones « photo » par des clichés authentiques dans CONFIG.media. -->
+    <!-- HERO : images réelles extraites des vidéos avant/après fournies par l’entreprise. -->
     <section class="hero" id="accueil" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
+          <img class="hero-brand-logo" src="assets/logo-complet.png" alt="Logo King's Wash 97" loading="eager" decoding="async">
           <p class="eyebrow">Le Robert · Martinique</p>
           <h1 id="hero-title">Nettoyage auto, canapés et vitres. <strong>On vient à vous.</strong></h1>
           <p class="lead">Retrouvez des surfaces propres sans bousculer votre journée. À domicile en Martinique ou dans notre local équipé au Robert.</p>
@@ -393,7 +430,7 @@
           </div>
           <div class="hero-proof" aria-label="Nos atouts"><span>Service mobile</span><span>Local équipé</span><span>Échange direct sur WhatsApp</span></div>
         </div>
-        <div class="hero-visual" aria-label="Emplacements pour vos vraies photos avant et après nettoyage">
+        <div class="hero-visual" aria-label="Avant et après nettoyage des jantes par King's Wash 97">
           <div class="hero-panels">
             <div class="hero-panel" id="heroBefore">
               <span class="hero-label">AVANT</span>
@@ -406,7 +443,7 @@
               <span class="placeholder-tag">Votre photo après</span>
             </div>
           </div>
-          <div class="hero-visual-footer"><span><span class="accent-dot"></span>Votre travail, en images</span><span>Photos réelles à ajouter</span></div>
+          <div class="hero-visual-footer"><span><span class="accent-dot"></span>Notre savoir-faire en images</span><span>Avant / après jantes</span></div>
         </div>
       </div>
     </section>
@@ -437,7 +474,7 @@
           <article class="price-card reveal" aria-labelledby="essential-name">
             <p class="type-line">L'essentiel, sans détour</p>
             <h3 id="essential-name">Essentiel</h3>
-            <p class="short">Pour prendre soin de votre voiture, à l'intérieur comme à l'extérieur.</p>
+            <p class="short">L'offre idéale pour un entretien efficace et un véhicule propre au quotidien.</p>
             <div class="price-line" aria-live="polite"><span class="price-prefix" id="essential-prefix">Dès</span><span class="price" id="essential-price">65 €</span><span class="price-unit" id="essential-unit">· Citadine</span></div>
             <!-- Liste provisoire : vérifier le détail de chaque prestation avant publication. -->
             <ul class="checked-list" id="essential-includes"><li>Lavage extérieur</li><li>Aspiration courante de l'habitacle</li><li>Nettoyage des surfaces intérieures</li><li>Finition des vitres</li></ul>
@@ -445,16 +482,59 @@
           </article>
           <article class="price-card featured reveal" aria-labelledby="complete-name">
             <!-- Remplacer par « Formule recommandée » si « Le plus choisi » n'est pas vérifiable. -->
-            <span class="feature-badge" id="featuredBadge">Le plus choisi</span>
+            <span class="feature-badge" id="featuredBadge">Formule recommandée</span>
             <p class="type-line">Le soin complet</p>
             <h3 id="complete-name">Intégral</h3>
-            <p class="short">L'intérieur et l'extérieur, avec shampoing des sièges inclus.</p>
+            <p class="short">La formule la plus complète pour un nettoyage intérieur + extérieur avec shampouinage inclus.</p>
             <div class="price-line" aria-live="polite"><span class="price-prefix" id="complete-prefix"></span><span class="price soon" id="complete-price">Tarif à renseigner</span><span class="price-unit" id="complete-unit">· Citadine</span></div>
             <ul class="checked-list" id="complete-includes"><li>Prestations de la formule Essentiel</li><li>Shampoing des sièges</li><li>Nettoyage approfondi de l'habitacle</li><li>Finitions intérieures et extérieures</li></ul>
             <button type="button" class="btn btn-primary reserve-formula" data-formula="complete">Réserver cette formule <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
           </article>
         </div>
-        <p class="pricing-footnote">Tarifs affichés à titre indicatif, selon catégorie et état du véhicule. Le prix final et les éventuels frais de déplacement sont confirmés avant intervention.<br>TVA non applicable, art. 293 B du CGI.</p>
+        <p class="pricing-footnote">Tarifs affichés selon la catégorie du véhicule. Les frais de déplacement de 5 € à 10 € selon le secteur sont confirmés avant intervention.<br>TVA non applicable, art. 293 B du CGI.</p>
+      </div>
+    </section>
+
+    
+
+    <section class="section" id="videos" aria-labelledby="videos-title" style="padding-top:0">
+      <div class="container">
+        <div class="heading-center reveal">
+          <p class="eyebrow">Réalisations vidéo</p>
+          <h2 id="videos-title">Avant / après : vos vraies prestations en images.</h2>
+          <p class="intro intro-center">Voici les 4 vidéos que vous avez fournies, organisées par étape. Votre monogramme 3D est désormais utilisé en fond décoratif du site pour renforcer l’identité visuelle.</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="assets/video-jantes-avant-poster.jpg">
+              <source src="assets/video-jantes-avant.mp4" type="video/mp4">
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+            <div class="video-meta"><div><h3>Avant · Jantes</h3><p>État des jantes avant intervention, pour montrer clairement le point de départ de la prestation.</p></div><span class="video-badge">Avant jantes</span></div>
+          </article>
+          <article class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="assets/video-jantes-apres-poster.jpg">
+              <source src="assets/video-jantes-apres.mp4" type="video/mp4">
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+            <div class="video-meta"><div><h3>Après · Jantes</h3><p>Résultat après nettoyage, pour valoriser la finition et la netteté obtenues sur les jantes.</p></div><span class="video-badge">Après jantes</span></div>
+          </article>
+          <article class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="assets/video-habitacle-avant-poster.jpg">
+              <source src="assets/video-habitacle-avant.mp4" type="video/mp4">
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+            <div class="video-meta"><div><h3>Avant · Habitacle</h3><p>Vidéo avant nettoyage de l’habitacle pour illustrer l’état initial et la nécessité de l’intervention.</p></div><span class="video-badge">Avant habitacle</span></div>
+          </article>
+          <article class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="assets/video-habitacle-apres-poster.jpg">
+              <source src="assets/video-habitacle-apres.mp4" type="video/mp4">
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+            <div class="video-meta"><div><h3>Après · Habitacle</h3><p>Résultat final après nettoyage pour mettre en avant la propreté, le soin et le rendu visuel.</p></div><span class="video-badge">Après habitacle</span></div>
+          </article>
+          
+        </div>
       </div>
     </section>
 
@@ -497,11 +577,10 @@
 
     <section class="section" id="avant-apres" aria-labelledby="gallery-title">
       <div class="container">
-        <div class="reveal"><p class="eyebrow">La preuve par l'image</p><h2 id="gallery-title">Voyez la différence.</h2><p class="intro">Retrouvez ici vos véritables transformations avant/après. Faites glisser le curseur pour comparer une fois les photos ajoutées.</p></div>
+        <div class="reveal"><p class="eyebrow">La preuve par l'image</p><h2 id="gallery-title">Voyez la différence.</h2><p class="intro">Des images tirées de vos vidéos de prestation. Faites glisser le curseur pour visualiser les transformations.</p></div>
         <div class="gallery-switch reveal" role="group" aria-label="Choisir une comparaison avant après">
-          <button type="button" class="gallery-tab" data-gallery="0" aria-pressed="true">Habitacle</button>
-          <button type="button" class="gallery-tab" data-gallery="1" aria-pressed="false">Sièges</button>
-          <button type="button" class="gallery-tab" data-gallery="2" aria-pressed="false">Carrosserie</button>
+          <button type="button" class="gallery-tab" data-gallery="0" aria-pressed="true">Jantes</button>
+          <button type="button" class="gallery-tab" data-gallery="1" aria-pressed="false">Habitacle</button>
         </div>
         <div class="compare reveal" id="compare" style="--split:50%">
           <div class="compare-layer before" id="compareBefore"><div class="empty-photo"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><span>Photo AVANT<br>à ajouter</span></div></div>
@@ -511,7 +590,7 @@
           <label class="sr-only" for="compareRange">Déplacer le curseur pour comparer l'avant et l'après</label>
           <input class="compare-input" id="compareRange" type="range" min="0" max="100" value="50" aria-label="Comparer l'avant et l'après">
         </div>
-        <div class="compare-note"><span>Emplacements prévus pour vos photos réelles, sans faux résultat.</span><span>Faites glisser ↔</span></div>
+        <div class="compare-note"><span>Images authentiques extraites de vos vidéos fournies.</span><span>Faites glisser ↔</span></div>
       </div>
     </section>
 
@@ -522,18 +601,10 @@
       </div></div>
     </section>
 
-    <section class="section" id="avis" aria-labelledby="reviews-title">
-      <div class="container"><div class="heading-center reveal"><p class="eyebrow">Votre confiance compte</p><h2 id="reviews-title">Ce sont nos clients qui en parlent le mieux.</h2><p class="intro intro-center">Les avis publiés ici seront des témoignages authentiques. Trois emplacements sont prêts.</p></div>
-        <div class="review-grid">
-          <article class="review-card reveal"><span class="stars-placeholder" aria-label="Note à ajouter">☆☆☆☆☆</span><p class="review-placeholder">Emplacement pour un avis client réel, publié avec son accord.</p><span class="review-author">Avis client 01 · à compléter</span></article>
-          <article class="review-card reveal"><span class="stars-placeholder" aria-label="Note à ajouter">☆☆☆☆☆</span><p class="review-placeholder">Emplacement pour un avis client réel, publié avec son accord.</p><span class="review-author">Avis client 02 · à compléter</span></article>
-          <article class="review-card reveal"><span class="stars-placeholder" aria-label="Note à ajouter">☆☆☆☆☆</span><p class="review-placeholder">Emplacement pour un avis client réel, publié avec son accord.</p><span class="review-author">Avis client 03 · à compléter</span></article>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="loyalty" id="fidelite" aria-label="Offre fidélité">
-      <div class="container loyalty-inner"><div><p class="eyebrow">Un petit merci pour votre confiance</p><h2>Déjà client ? <span style="color:var(--blue)">−10 %</span> sur votre prochain lavage.</h2><p>Offre fidélité applicable à un prochain lavage au local. Conditions à confirmer lors de la réservation.</p></div><a href="#reservation" class="btn btn-dark">Profiter de mon offre <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="container loyalty-inner"><div><p class="eyebrow">Un petit merci pour votre confiance</p><h2>Déjà client ? <span style="color:var(--blue)">−10 %</span> sur votre prochain lavage.</h2><p>Offre fidélité applicable à un prochain lavage au local. Les conditions exactes sont confirmées lors de la réservation.</p></div><a href="#reservation" class="btn btn-dark">Profiter de mon offre <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </section>
 
     <section class="section faq" id="faq" aria-labelledby="faq-title">
@@ -565,8 +636,8 @@
             <optgroup label="Formule Essentiel">
               <option value="auto:essentiel:citadine">Essentiel · Citadine</option><option value="auto:essentiel:berline">Essentiel · Berline</option><option value="auto:essentiel:suv">Essentiel · SUV</option><option value="auto:essentiel:utilitaire">Essentiel · Utilitaire</option>
             </optgroup>
-            <optgroup label="Formule Intégral">
-              <option value="auto:complete:citadine">Intégral · Citadine</option><option value="auto:complete:berline">Intégral · Berline</option><option value="auto:complete:suv">Intégral · SUV</option><option value="auto:complete:utilitaire">Intégral · Utilitaire</option>
+            <optgroup label="Formule Royale">
+              <option value="auto:complete:citadine">Royale · Citadine</option><option value="auto:complete:berline">Royale · Berline</option><option value="auto:complete:suv">Royale · SUV</option><option value="auto:complete:utilitaire">Royale · Utilitaire</option>
             </optgroup>
             <optgroup label="Sur devis"><option value="textile">Nettoyage textile / tapisserie</option><option value="vitres">Nettoyage vitres / surfaces vitrées</option><option value="extras">Prestations auto à la carte</option></optgroup>
           </select></div>
@@ -585,13 +656,13 @@
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-grid">
-        <div><a href="#accueil" class="brand"><span class="brand-mark" aria-hidden="true">K</span><span class="brand-name">King's Wash <span style="color:#80C4FF">97</span><small>Nettoyage mobile</small></span></a><p class="footer-info">Nettoyage automobile, textiles et vitres à domicile en Martinique, ou au local sur rendez-vous au Robert (97231).</p></div>
+        <div><a href="#accueil" class="brand" style="display:block"><img class="footer-logo" src="assets/logo-complet.png" alt="Logo complet King's Wash 97" loading="lazy" decoding="async"><span class="sr-only">King's Wash 97</span></a><p class="footer-info">Nettoyage automobile, textiles et vitres à domicile en Martinique, ou au local sur rendez-vous au Robert (97231).</p></div>
         <div><h3>Explorer</h3><nav class="footer-links" aria-label="Navigation pied de page"><a href="#offres">Offres et tarifs</a><a href="#prestations">Prestations</a><a href="#avant-apres">Avant / Après</a><a href="#faq">FAQ</a><a href="#reservation">Réservation</a></nav></div>
-        <div><h3>Nous contacter</h3><div class="footer-links"><a class="js-wa" href="#reservation" data-whatsapp="general">WhatsApp : numéro à renseigner</a><a id="instagramLink" href="#contact" aria-label="Instagram King's Wash 97">Instagram : compte à renseigner</a><span>Le Robert · 97231 · Martinique</span></div></div>
+        <div><h3>Nous contacter</h3><div class="footer-links"><a class="js-wa" href="#reservation" data-whatsapp="general">WhatsApp : numéro à renseigner</a><a href="mailto:kingswash97@gmail.com">kingswash97@gmail.com</a><a id="instagramLink" href="#contact" aria-label="Instagram King's Wash 97">Instagram : compte à renseigner</a><span>Le Robert · 97231 · Martinique</span></div></div>
       </div>
       <details id="mentions-legales"><summary>Mentions légales et confidentialité</summary>
         <p><strong>Éditeur :</strong> King's Wash 97, micro-entreprise de Kilyann Picardon, Le Robert (97231), Martinique. <strong>SIRET :</strong> 107 314 437 00016. <strong>TVA :</strong> non applicable, art. 293 B du CGI.</p>
-        <p><strong>Contact :</strong> via WhatsApp (numéro à renseigner) et Instagram (lien à renseigner). <strong>Hébergeur :</strong> [nom, adresse et contact de l'hébergeur à compléter]. <strong>Adresse de contact / e-mail :</strong> [à compléter si applicable].</p>
+        <p><strong>Contact :</strong> via WhatsApp au +596 696 43 34 61, par e-mail à kingswash97@gmail.com et sur Instagram (lien à renseigner). <strong>Hébergeur :</strong> [nom, adresse et contact de l'hébergeur à compléter].</p>
         <p><strong>Données personnelles :</strong> aucun formulaire n'enregistre vos données sur ce site. Les coordonnées saisies servent uniquement à préparer un message WhatsApp, que vous décidez d'envoyer. WhatsApp applique ensuite sa propre politique de confidentialité. Aucun outil d'analyse ou cookie publicitaire n'est installé dans cette version.</p>
         <p><strong>Informations commerciales :</strong> les prix à compléter et offres présentées doivent être validés avant publication. Les éventuels frais de déplacement, les moyens de paiement et les conditions d'annulation sont confirmés avant prestation.</p>
       </details>
@@ -611,42 +682,44 @@
        Exemple de FORMAT (pas un vrai numéro) : 596696XXXXXXXX.
        =============================================================== */
     const CONFIG = {
-      whatsappNumber: '',              // EXIGÉ : numéro réel, format international 596696... sans « + »
+      whatsappNumber: '596696433461',   // Numéro intégré à partir de votre visuel actuel
       instagramUrl: '',                 // EXIGÉ : https://www.instagram.com/nom_du_compte/
       responseTime: '',                 // Facultatif : délai réellement tenu, ex. « sous 24 h »
       websiteUrl: '',                   // URL réelle, ex. https://www.votredomaine.fr/
       // L'image Open Graph (fichier PNG fourni) a une URL statique dans <head>.
-      offerName: 'Intégral',            // Autres idées : Confort, Éclat, Signature
-      featuredBadge: 'Le plus choisi',  // Vérifier ce fait ou préférer « Formule recommandée »
+      offerName: 'Royale',              // Nom aligné sur votre grille tarifaire actuelle
+      featuredBadge: 'Formule recommandée',
       prices: {
-        essentiel: {citadine:65, berline:null, suv:null, utilitaire:null},
-        complete:  {citadine:null, berline:null, suv:null, utilitaire:null},
-        extras:    {seats:null, vacuum:null, prewash:null}
+        essentiel: {citadine:65, berline:75, suv:85, utilitaire:95},
+        complete:  {citadine:115, berline:130, suv:145, utilitaire:160},
+        extras: {
+          seats: {citadine:30,berline:35,suv:40,utilitaire:45},
+          vacuum: {citadine:15,berline:20,suv:25,utilitaire:30},
+          prewash: {citadine:10,berline:10,suv:15,utilitaire:15}
+        }
       },
       /* Modifiez ces listes en fonction des prestations réellement incluses. */
       includes: {
         essentiel: [
-          'Lavage extérieur',
-          'Aspiration courante de l’habitacle',
-          'Nettoyage des surfaces intérieures',
-          'Finition des vitres'
+          'Aspiration complète de l’habitacle',
+          'Rénovation plastique',
+          'Shampoing carrosserie',
+          'Décrassage jantes'
         ],
         complete: [
-          'Prestations de la formule Essentiel',
-          'Shampoing des sièges',
-          'Nettoyage approfondi de l’habitacle',
-          'Finitions intérieures et extérieures'
+          'Tout l’Essentiel',
+          'Shampouinage sièges et moquettes',
+          'Traitement vitre anti-déperlant',
+          'Brillance pneumatique',
+          'Détails premium'
         ]
       },
-      /* Les photos doivent être réelles et optimisées en .webp.
-         Chemins relatifs possibles : images/photo-avant.webp
-         Laisser '' affiche un emplacement identifiable, pas une fausse photo. */
+      /* Images extraites des 4 vidéos avant/après fournies par King's Wash 97. */
       media: {
-        heroBefore:'', heroAfter:'',
+        heroBefore:'assets/jantes-avant.webp', heroAfter:'assets/jantes-apres.webp',
         gallery: [
-          {before:'',after:'',label:'Habitacle'},
-          {before:'',after:'',label:'Sièges'},
-          {before:'',after:'',label:'Carrosserie'}
+          {before:'assets/jantes-avant.webp',after:'assets/jantes-apres.webp',label:'Jantes'},
+          {before:'assets/habitacle-avant.webp',after:'assets/habitacle-apres.webp',label:'Habitacle'}
         ]
       }
       /* Option FUTURE : lien d'acompte Stripe Payment Link.
@@ -715,6 +788,13 @@
         unit.textContent='· '+vehicleNames[currentVehicle];
       });
       $$('.vehicle-btn').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.vehicle===currentVehicle)));
+      renderExtraPrices();
+    }
+    function renderExtraPrices(){
+      $$('[data-extra-price]').forEach(span=>{
+        const price=CONFIG.prices.extras[span.dataset.extraPrice]?.[currentVehicle];
+        span.textContent=Number.isFinite(price)?euro.format(price):'Prix à renseigner';
+      });
     }
     function renderIncludes(){
       for(const key of ['essentiel','complete']){
@@ -769,10 +849,7 @@
       $$('#bookService option').forEach(option=>{
         if(option.value.startsWith('auto:complete:')) option.textContent=CONFIG.offerName+' · '+vehicleNames[option.value.split(':')[2]];
       });
-      $$('[data-extra-price]').forEach(span=>{
-        const price=CONFIG.prices.extras[span.dataset.extraPrice];
-        span.textContent=Number.isFinite(price)?`Dès ${euro.format(price)}`:'Prix à renseigner';
-      });
+      renderExtraPrices();
       if(CONFIG.instagramUrl && /^https:\/\//i.test(CONFIG.instagramUrl)){
         $('#instagramLink').href=CONFIG.instagramUrl;
         $('#instagramLink').textContent='Instagram · @'+(CONFIG.instagramUrl.split('/').filter(Boolean).pop()||'kingswash97');
